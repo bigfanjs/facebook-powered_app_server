@@ -1,8 +1,15 @@
+"use strict";
+
 const express = require("express");
 const path = require("path");
 const favicon = require("serve-favicon");
 const logger = require("morgan");
 const cookieParser = require("cookie-parser");
+const mongoose = require("mongoose");
+const config = require("config");
+
+mongoose.Promise = global.Promise;
+mongoose.connect(config.get("database.uri"));
 
 const app = express();
 
