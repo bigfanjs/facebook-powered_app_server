@@ -5,5 +5,7 @@
     "protocol": "mongodb",
     "name": "challenge",
     "uri": "mongodb://localhost:27017/challenge"
-  }
+  },
+  "JWT_SECRET": "apiauth",
+  "session": false
 }

@@ -27,7 +27,7 @@ Schema.pre("save", async function (next) {
   }
 });
 
-Schema.methods.authenticate = async function (password) {
+Schema.methods.validatePassword = async function (password) {
   try {
     return await bcrypt.compare(password, this.password);
   } catch (error) {
