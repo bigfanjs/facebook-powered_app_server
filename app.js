@@ -12,7 +12,7 @@ const validateSchema = require("./lib/middleware/validate-schema");
 const auth = require("./lib/auth");
 
 mongoose.Promise = global.Promise;
-mongoose.connect(config.get("database.uri"));
+mongoose.connect(config.get("db.uri"), config.get("db.opts"));
 
 const app = express();
 

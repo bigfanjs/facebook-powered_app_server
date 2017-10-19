@@ -1,10 +1,9 @@
 {
-  "database": {
-    "host": "localhost",
-    "port": "27017",
-    "protocol": "mongodb",
-    "name": "challenge",
-    "uri": "mongodb://localhost:27017/challenge"
+  "db": {
+    "uri": "mongodb://localhost:27017/challenge",
+    "opts": {
+      "useMongoClient": true
+    }
   },
   "JWT_SECRET": "apiauth",
   "session": false
