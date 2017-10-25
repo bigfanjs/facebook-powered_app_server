@@ -22,8 +22,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(auth.initialize());
 app.use(express.static(path.join(__dirname, "public")));
 
-app.post("/signup", validateSchema("user"), users.signup);
-app.post("/signin", validateSchema("user"), auth.authenticate(), users.signin);
+app.post("/api/users/signup", validateSchema("user"), users.signup);
+app.post("/api/users/signin", validateSchema("user"), auth.authenticate(), users.signin);
 
 app.use(function(req, res, next) {
   res.status(404).json({error: new Error("Not Found")});
