@@ -22,3 +22,7 @@ exports.signin = function (req, res, next) {
   const token = signToken(req.user);
   res.status(200).json({token});
 }
+
+exports.getUser = function (req, res, next) {
+  res.status(200).json({user: req.user});
+}

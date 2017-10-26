@@ -24,6 +24,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.post("/api/users/signup", validateSchema("user"), users.signup);
 app.post("/api/users/signin", validateSchema("user"), auth.authenticate(), users.signin);
+app.get("/api/users/user", passport.authenticate("jwt"), users.getUser);
 
 app.use(function(req, res, next) {
   res.status(404).json({error: new Error("Not Found")});
